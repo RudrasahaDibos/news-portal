@@ -4,25 +4,26 @@ const loadnews = async() =>{
      const items = data.data.news_category
      const listContainer = document.getElementById('list-container')
      items.forEach(items => {
-        console.log(items)
+        
          const div = document.createElement('div')
          div.innerHTML = `
-          <button  onclick=" loadCatagory('${items.category_id}')" class="btn btn-success ml-2 ">${items.category_name}</button>
+          <button  onclick="getID(catid)" class="btn btn-success flex gap-2">${items.category_name}</button>
          `
          listContainer.appendChild(div)
      });
 }
  
+function getID(catid){
+  con
+}
 
 
+ const loadCatagory = async() =>{
 
- const loadCatagory = async(catid) =>{
-    console.log(catid)
-    const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${catid}`)
+    const res = await fetch('https://openapi.programming-hero.com/api/news/category/01')
     const data = await res.json()
     const news = data.data
     const cardContainer = document.getElementById('card-container')
-    cardContainer.innerHTML =''
     news.forEach(items =>{
         console.log(items)
        const div = document.createElement('div')
@@ -47,16 +48,5 @@ const loadnews = async() =>{
         cardContainer.appendChild(div)
     })
  }
-
-const handlesearch =()=>{
-  const inputFlield = document.getElementById('input-flield').value
-  if(inputFlield){
-        loadCatagory(inputFlield)
-  }
-  else{
-    alert('please enter a vaild id')
-  }
-}
-
-loadCatagory("01")
+loadCatagory()
 loadnews()

@@ -47,16 +47,5 @@ const loadnews = async() =>{
         cardContainer.appendChild(div)
     })
  }
-
-const handlesearch =()=>{
-  const inputFlield = document.getElementById('input-flield').value
-  if(inputFlield){
-        loadCatagory(inputFlield)
-  }
-  else{
-    alert('please enter a vaild id')
-  }
-}
-
 loadCatagory("01")
 loadnews()

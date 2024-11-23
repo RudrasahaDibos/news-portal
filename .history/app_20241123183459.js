@@ -3,6 +3,7 @@ const loadnews = async() =>{
     const data = await res.json()
      const items = data.data.news_category
      const listContainer = document.getElementById('list-container')
+     listContainer.innerHTML =''
      items.forEach(items => {
         console.log(items)
          const div = document.createElement('div')
@@ -22,7 +23,6 @@ const loadnews = async() =>{
     const data = await res.json()
     const news = data.data
     const cardContainer = document.getElementById('card-container')
-    cardContainer.innerHTML =''
     news.forEach(items =>{
         console.log(items)
        const div = document.createElement('div')
@@ -47,16 +47,5 @@ const loadnews = async() =>{
         cardContainer.appendChild(div)
     })
  }
-
-const handlesearch =()=>{
-  const inputFlield = document.getElementById('input-flield').value
-  if(inputFlield){
-        loadCatagory(inputFlield)
-  }
-  else{
-    alert('please enter a vaild id')
-  }
-}
-
 loadCatagory("01")
 loadnews()

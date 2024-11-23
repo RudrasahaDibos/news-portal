@@ -49,13 +49,7 @@ const loadnews = async() =>{
  }
 
 const handlesearch =()=>{
-  const inputFlield = document.getElementById('input-flield').value
-  if(inputFlield){
-        loadCatagory(inputFlield)
-  }
-  else{
-    alert('please enter a vaild id')
-  }
+  const input
 }
 
 loadCatagory("01")

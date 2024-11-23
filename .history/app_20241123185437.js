@@ -50,8 +50,8 @@ const loadnews = async() =>{
 
 const handlesearch =()=>{
   const inputFlield = document.getElementById('input-flield').value
-  if(inputFlield){
-        loadCatagory(inputFlield)
+  if(value){
+        lo
   }
   else{
     alert('please enter a vaild id')
